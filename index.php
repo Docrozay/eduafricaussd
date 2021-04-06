@@ -140,7 +140,7 @@
             if ($text == "") {
                 $response  = "CON Welcome to EduAfrica, Choose Preferred Language\n";
                 $response .= "1. English \n";
-                $response .= "2. Swaili";
+                $response .= "2. Swahili";
             // first response when a user dials our ussd code
             } 
             elseif ($text == "1" && $user_count==0) {
