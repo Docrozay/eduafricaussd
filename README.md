@@ -1,4 +1,5 @@
-# eduafricaussd
+# Welcome to Game Of Learners Season 2 
+# Our project is based of the USSD Technology called "EduAfrica"
 This application is created with the use of USSD technology to provide access to learning where internet access is an hinderance.
 With the help of Microsoft Azure, we were able to host this application which uses a database for better connectivity.
 To use this app:
