@@ -357,7 +357,7 @@
                 $response .= "00. Back";
             }
             elseif ($text == "1*1*1*4" && $user_count==1) {
-                $response = "END Converting metric units of length\n 1 km = 1,000 m \n 1 m = 100 cm \n 1 cm = 10 mm \n 1 m = 1,000 mm \n F° TO C°\n To convert temperatures in degrees Fahrenheit to Celsius, subtract 32 and multiply by .5556 (or 5/9). \n C° TO F°\n To convert temperatures in degrees Celsius to Fahrenheit, multiply by 1.8 (or 9/5) and add 32.";
+                $response = "END Converting metric units of length\n 1 km = 1,000 m \n 1 m = 100 cm \n 1 cm = 10 mm \n 1 m = 1,000 mm \n F° TO C°\n To convert temperatures in degrees Fahrenheit to Celsius, subtract 32 and multiply by .5556 (or 5/9). \n C° TO F°\n To convert temperatures in degrees Celsius to Fahrenheit, multiply by 1.8 (or 9/5) and add 32";
 
             }
 
