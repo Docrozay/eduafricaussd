@@ -50,20 +50,28 @@
     }
         $value = contains("1*1*0", $_POST["text"]);
         $value2 = contains("1*2*0", $_POST["text"]);
+        $value3 = contains("1*1*1*00", $_POST["text"]);
         while( $value != -1) {
             $left = substr($_POST["text"], 0, $value-3);
             $right = substr($_POST["text"], $value+1);
             $_POST["text"] = "".$left."".$right."";
             $value = contains("1*1*0", $_POST["text"]);
         }
-        while( $value2 != -1) {
-            $left = substr($_POST["text"], 0, $value2-3);
-            $right = substr($_POST["text"], $value2+1);
+        while( $value != -1) {
+            $left = substr($_POST["text"], 0, $value-3);
+            $right = substr($_POST["text"], $value+1);
             $_POST["text"] = "".$left."".$right."";
-            $value2 = contains("1*2*0", $_POST["text"]);
+            $value = contains("1*1*0", $_POST["text"]);
+        }
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("1*1*1*00", $_POST["text"]);
         }
         $value = contains("1*1*0", $_POST["text"]);
         $value2 = contains("1*2*0", $_POST["text"]);
+        $value3 = contains("1*1*1*00", $_POST["text"]);
         while( $value != -1) {
             $left = substr($_POST["text"], 0, $value-3);
             $right = substr($_POST["text"], $value+1);
@@ -75,6 +83,12 @@
             $right = substr($_POST["text"], $value2+1);
             $_POST["text"] = "".$left."".$right."";
             $value2 = contains("1*2*0", $_POST["text"]);
+        }
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("1*1*1*00", $_POST["text"]);
         }
         
         
@@ -346,20 +360,11 @@
                 $response .= "00. Back";
             }
             elseif ($text == "1*1*1*1" && $user_count==1) {
-                $response = "CON About Mathematic\n";
-                $response .= "1. Assignment\n";
-                $response .= "2. Test\n";
-                $response .= "3. Check Test Score\n";
-                $response .= "4. Conversions\n";
-                $response .= "00. Back";
+                $response = "END MATHS Assignment\n Study the Following Multiplication Table\n 2 Multiplication Table \n 3 Multiplication Table \n 4 Multiplication \n 5 Multiplication Table\n Study before 7th May, 2021";
             }
             elseif ($text == "1*1*1*2" && $user_count==1) {
-                $response = "CON About Mathematic\n";
-                $response .= "1. Assignment\n";
-                $response .= "2. Test\n";
-                $response .= "3. Check Test Score\n";
-                $response .= "4. Conversions\n";
-                $response .= "00. Back";
+                $response = "END No Mathematic Test Yet\n";
+
             }
             elseif ($text == "1*1*1*3" && $user_count==1) {
                 $response = "CON About Mathematic\n";
