@@ -305,8 +305,8 @@
                 $response = "END Question 5 ".$do."\n \nYour total score is ".$score."/5";
             } 
             elseif ($text == "1*1" && $user_count==1) {
-                $response = "CON  Language has been set to English\n";
-                $response .= "1. Maths\n";
+                $response = "CON Choose Subject\n";
+                $response .= "1. Mathematics\n";
                 $response .= "2. English\n";
                 $response .= "3. Civic Education\n";
                 $response .= "0. Back";
@@ -324,7 +324,42 @@
             } elseif ($text == "1*4" && $user_count==1) {
                 $response = "END Dear ".$student_firstname." ".$student_lastname. "\n Your Due Balance is ".$student_balance."";
             }
-        
+            elseif ($text == "1*1*1" && $user_count==1) {
+                $response = "CON About Mathematic\n";
+                $response .= "1. Assignment\n";
+                $response .= "2. Test\n";
+                $response .= "3. Check Test Score\n";
+                $response .= "4. Conversions\n";
+                $response .= "00. Back";
+            }
+            elseif ($text == "1*1*1*1" && $user_count==1) {
+                $response = "CON About Mathematic\n";
+                $response .= "1. Assignment\n";
+                $response .= "2. Test\n";
+                $response .= "3. Check Test Score\n";
+                $response .= "4. Conversions\n";
+                $response .= "00. Back";
+            }
+            elseif ($text == "1*1*1*2" && $user_count==1) {
+                $response = "CON About Mathematic\n";
+                $response .= "1. Assignment\n";
+                $response .= "2. Test\n";
+                $response .= "3. Check Test Score\n";
+                $response .= "4. Conversions\n";
+                $response .= "00. Back";
+            }
+            elseif ($text == "1*1*1*3" && $user_count==1) {
+                $response = "CON About Mathematic\n";
+                $response .= "1. Assignment\n";
+                $response .= "2. Test\n";
+                $response .= "3. Check Test Score\n";
+                $response .= "4. Conversions\n";
+                $response .= "00. Back";
+            }
+            elseif ($text == "1*1*1*4" && $user_count==1) {
+                $response = "END Converting metric units of length\n 1 km = 1,000 m \n 1 m = 100 cm \n 1 cm = 10 mm \n 1 m = 1,000 mm \n";
+
+            }
 
             
             
