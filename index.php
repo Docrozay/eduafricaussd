@@ -29,114 +29,114 @@
     $Q3 = $quiz['question_3'];
     $Q4 = $quiz['question_4'];
     $Q5 = $quiz['question_5'];
-    // function contains($str, $main_str){
-    //     $last_index = -1;
-    //     for($i=0; $i < strlen($main_str); $i++){
-    //         for($j=0; $i+$j<=strlen($main_str); $j++){
-    //             if($str == substr($main_str, $i, $j)){
-    //                 $last_index = $i+$j-1;
-    //             }
-    //         }
-    //     }
-    //     return $last_index;
-    // }
-    // if($check_phone->execute([$phone,"YES"])){
-    //     $user_count=$check_phone->rowCount(); 
-    //     if($student = $check_phone->fetch()){
-    //         $student_firstname = $student['stu_firstname'];
-    //         $student_lastname = $student['stu_lastname'];
-    //         $student_lga = $student['stu_lga'];
-    //         $student_status = $student['stu_status'];
-    //     }   
-    // }
-    //     $value = contains("1*1*0", $_POST["text"]);
-    //     $value2 = contains("1*2*0", $_POST["text"]);
-    //     $value3 = contains("1*1*1*00", $_POST["text"]);
-    //     while( $value != -1) {
-    //         $left = substr($_POST["text"], 0, $value-3);
-    //         $right = substr($_POST["text"], $value+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value = contains("1*1*0", $_POST["text"]);
-    //     }
-    //     while( $value != -1) {
-    //         $left = substr($_POST["text"], 0, $value-3);
-    //         $right = substr($_POST["text"], $value+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value = contains("1*1*0", $_POST["text"]);
-    //     }
-    //     while( $value3 != -1) {
-    //         $left = substr($_POST["text"], 0, $value3-3);
-    //         $right = substr($_POST["text"], $value3+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value3 = contains("1*1*1*00", $_POST["text"]);
-    //     }
-    //     $value = contains("1*1*0", $_POST["text"]);
-    //     $value2 = contains("1*2*0", $_POST["text"]);
-    //     $value3 = contains("1*1*1*00", $_POST["text"]);
-    //     while( $value != -1) {
-    //         $left = substr($_POST["text"], 0, $value-3);
-    //         $right = substr($_POST["text"], $value+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value = contains("1*1*0", $_POST["text"]);
-    //     }
-    //     while( $value2 != -1) {
-    //         $left = substr($_POST["text"], 0, $value2-3);
-    //         $right = substr($_POST["text"], $value2+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value2 = contains("1*2*0", $_POST["text"]);
-    //     }
-    //     while( $value3 != -1) {
-    //         $left = substr($_POST["text"], 0, $value3-3);
-    //         $right = substr($_POST["text"], $value3+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value3 = contains("1*1*1*00", $_POST["text"]);
-    //     }
-    //     /*****************KENYAA****** */
-    //     $value3 = contains("2*1*0", $_POST["text"]);
-    //     $value4 = contains("2*2*0", $_POST["text"]);
-    //     $value5 = contains("2*1*1*00", $_POST["text"]);
-    //     while( $value3 != -1) {
-    //         $left = substr($_POST["text"], 0, $value3-3);
-    //         $right = substr($_POST["text"], $value3+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value3 = contains("2*1*0", $_POST["text"]);
-    //     }
-    //     while( $value3 != -1) {
-    //         $left = substr($_POST["text"], 0, $value3-3);
-    //         $right = substr($_POST["text"], $value3+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value3 = contains("2*1*0", $_POST["text"]);
-    //     }
-    //     while( $value5 != -1) {
-    //         $left = substr($_POST["text"], 0, $value5-3);
-    //         $right = substr($_POST["text"], $value5+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value5 = contains("2*1*1*00", $_POST["text"]);
-    //     }
-    //     $value3 = contains("2*1*0", $_POST["text"]);
-    //     $value4 = contains("2*2*0", $_POST["text"]);
-    //     $value5 = contains("2*1*1*00", $_POST["text"]);
-    //     while( $value3 != -1) {
-    //         $left = substr($_POST["text"], 0, $value3-3);
-    //         $right = substr($_POST["text"], $value3+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value3 = contains("2*1*0", $_POST["text"]);
-    //     }
-    //     while( $value4 != -1) {
-    //         $left = substr($_POST["text"], 0, $value4-3);
-    //         $right = substr($_POST["text"], $value4+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value4 = contains("2*2*0", $_POST["text"]);
-    //     }
-    //     while( $value5 != -1) {
-    //         $left = substr($_POST["text"], 0, $value5-3);
-    //         $right = substr($_POST["text"], $value5+1);
-    //         $_POST["text"] = "".$left."".$right."";
-    //         $value5 = contains("1*1*1*00", $_POST["text"]);
-    //     }
+    function contains($str, $main_str){
+        $last_index = -1;
+        for($i=0; $i < strlen($main_str); $i++){
+            for($j=0; $i+$j<=strlen($main_str); $j++){
+                if($str == substr($main_str, $i, $j)){
+                    $last_index = $i+$j-1;
+                }
+            }
+        }
+        return $last_index;
+    }
+    if($check_phone->execute([$phone,"YES"])){
+        $user_count=$check_phone->rowCount(); 
+        if($student = $check_phone->fetch()){
+            $student_firstname = $student['stu_firstname'];
+            $student_lastname = $student['stu_lastname'];
+            $student_lga = $student['stu_lga'];
+            $student_status = $student['stu_status'];
+        }   
+    }
+        $value = contains("1*1*0", $_POST["text"]);
+        $value2 = contains("1*2*0", $_POST["text"]);
+        $value3 = contains("1*1*1*00", $_POST["text"]);
+        while( $value != -1) {
+            $left = substr($_POST["text"], 0, $value-3);
+            $right = substr($_POST["text"], $value+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value = contains("1*1*0", $_POST["text"]);
+        }
+        while( $value != -1) {
+            $left = substr($_POST["text"], 0, $value-3);
+            $right = substr($_POST["text"], $value+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value = contains("1*1*0", $_POST["text"]);
+        }
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("1*1*1*00", $_POST["text"]);
+        }
+        $value = contains("1*1*0", $_POST["text"]);
+        $value2 = contains("1*2*0", $_POST["text"]);
+        $value3 = contains("1*1*1*00", $_POST["text"]);
+        while( $value != -1) {
+            $left = substr($_POST["text"], 0, $value-3);
+            $right = substr($_POST["text"], $value+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value = contains("1*1*0", $_POST["text"]);
+        }
+        while( $value2 != -1) {
+            $left = substr($_POST["text"], 0, $value2-3);
+            $right = substr($_POST["text"], $value2+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value2 = contains("1*2*0", $_POST["text"]);
+        }
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("1*1*1*00", $_POST["text"]);
+        }
+        /*****************KENYAA****** */
+        $value3 = contains("2*1*0", $_POST["text"]);
+        $value4 = contains("2*2*0", $_POST["text"]);
+        $value5 = contains("2*1*1*00", $_POST["text"]);
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("2*1*0", $_POST["text"]);
+        }
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("2*1*0", $_POST["text"]);
+        }
+        while( $value5 != -1) {
+            $left = substr($_POST["text"], 0, $value5-3);
+            $right = substr($_POST["text"], $value5+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value5 = contains("2*1*1*00", $_POST["text"]);
+        }
+        $value3 = contains("2*1*0", $_POST["text"]);
+        $value4 = contains("2*2*0", $_POST["text"]);
+        $value5 = contains("2*1*1*00", $_POST["text"]);
+        while( $value3 != -1) {
+            $left = substr($_POST["text"], 0, $value3-3);
+            $right = substr($_POST["text"], $value3+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value3 = contains("2*1*0", $_POST["text"]);
+        }
+        while( $value4 != -1) {
+            $left = substr($_POST["text"], 0, $value4-3);
+            $right = substr($_POST["text"], $value4+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value4 = contains("2*2*0", $_POST["text"]);
+        }
+        while( $value5 != -1) {
+            $left = substr($_POST["text"], 0, $value5-3);
+            $right = substr($_POST["text"], $value5+1);
+            $_POST["text"] = "".$left."".$right."";
+            $value5 = contains("1*1*1*00", $_POST["text"]);
+        }
         
         
-        // $text = $_POST["text"];
+        $text = $_POST["text"];
 
             if ($text == "") {
                 $response  = "CON Welcome to EduAfrica, Choose Preferred Language\n";
