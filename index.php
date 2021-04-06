@@ -311,6 +311,19 @@
                 $response .= "3. Civic Education\n";
                 $response .= "0. Back";
             }
+            elseif ($text == "1*1*2" && $user_count==1) {
+                $response = "END English Coming Soon!!!\n";
+            }
+            elseif ($text == "1*1*3" && $user_count==1) {
+                $response = "END Civic Education Coming Soon!!!\n";
+            }
+            elseif ($text == "1*1" && $user_count==1) {
+                $response = "CON Choose Subject\n";
+                $response .= "1. Mathematics\n";
+                $response .= "2. English\n";
+                $response .= "3. Civic Education\n";
+                $response .= "0. Back";
+            }
              elseif ($text == "1*2" && $user_count==1) {
                 $response = "CON Student Details\n Firstname: ".$student_firstname."\n Lastname: ".$student_lastname. "\n Local Government: ".$student_lga."\n Status: ".$student_status. "\n";
                 $response .= "0. Back";
