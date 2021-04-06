@@ -6,6 +6,7 @@
     $phone = $_POST['phoneNumber'];
     $sessionId   = $_POST["sessionId"];
     $serviceCode = $_POST["serviceCode"];
+    $text = $_POST["text"];
     // $text = $_POST["text"];
     //This is the first menu screen
     $ussd_string_exploded = explode("*", $text);
@@ -135,7 +136,7 @@
     //     }
         
         
-        $text = $_POST["text"];
+        // $text = $_POST["text"];
 
             if ($text == "") {
                 $response  = "CON Welcome to EduAfrica, Choose Preferred Language\n";
