@@ -431,72 +431,72 @@
             /******* For SWAHILI***** */
 
 
-            elseif ($text == "2" && $user_count==0) {
+            elseif ($text == "2" && $user_count2==0) {
                         $response .= "1. usajili \n";
                         $response .= "2. kuhusu EduAfrica\n";
                         $response .= "3. waundaji\n";
                         $response .= "0. kurudi kwa lugha\n";
             }
-             elseif ($text == "2*1" && $user_count==0) {
+             elseif ($text == "2*1" && $user_count2==0) {
                 $response = "CON Jina lako la kwanza ni nani?";
                 $user = $con->prepare("INSERT INTO ken_stu_ussd(stu_phone)
                     VALUES (?)");
                 $user->execute([$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 3 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 3 && $user_count2==0) {
                 $response = "CON Jina lako la mwisho ni nani?";
                 $firstname = $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_firstname=? WHERE stu_phone=?");
                 $user->execute([$firstname,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 4 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 4 && $user_count2==0) {
                 $response = "CON Jina lako la kati unaitwa nani?";
                 $lastname =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_lastname=? WHERE stu_phone=?");
                 $user->execute([$lastname,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 5 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 5 && $user_count2==0) {
                 $response = "CON Wewe unatoka jimbo gani?";
                 $middlename =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_middlename=? WHERE stu_phone=?");
                 $user->execute([$middlename,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 6 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 6 && $user_count2==0) {
                 $response = "CON Serikali yako ya mtaa ni nini?";
                 $state =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_state=? WHERE stu_phone=?");
                 $user->execute([$state,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 7 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 7 && $user_count2==0) {
                 $response = "CON Je! Ni mwaka wako wa kuzaliwa?";
                 $lga =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_lga=? WHERE stu_phone=?");
                 $user->execute([$lga,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 8 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 8 && $user_count2==0) {
                 $response = "CON Je! Mwezi wako wa kuzaliwa ni nini?";
                 $year =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_year=? WHERE stu_phone=?");
                 $user->execute([$year,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 9 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 9 && $user_count2==0) {
                 $response = "CON Je! Ni siku yako ya kuzaliwa? ";
                 $month =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_month=? WHERE stu_phone=?");
                 $user->execute([$month,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 10 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 10 && $user_count2==0) {
                 $response = "CON Je! Uko darasa gani?";
                 $day =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_day=? WHERE stu_phone=?");
                 $user->execute([$day,$phone]);
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 11 && $user_count==0) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 11 && $user_count2==0) {
                 // save data in the database
                 $class =  $userResponse;
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_class=?,stu_status=?,stu_created_time=? WHERE stu_phone=?");
                 if ($user->execute([$class,"YES",$now,$phone])) {
                     $response = "END Usajili Umefanikiwa! Asante kwa kusajili Kituo cha Kujifunza cha Edu Africa .";
                 }
-            } elseif ($text == "2*2" && $user_count==0) {
+            } elseif ($text == "2*2" && $user_count2==0) {
                 // when use response with option Laravel
                 $response = "CON EduAfrica ni jukwaa ambalo huziba pengo ambapo hakuna ufikiaji wa mtandao.\n ";
-            } elseif ($text == "2*3" && $user_count==0) {
+            } elseif ($text == "2*3" && $user_count2==0) {
                 // when use response with option Laravel
                 $response = "CON EduAfrica inaundwa na.\n  Abandy Roosevelt\n Oviawe Princess \n Gregory \n Busola \n Vallery";
             }
-             elseif ($text == "2" && $user_count==1) {
+             elseif ($text == "2" && $user_count2==1) {
                 $response = "CON  Lugha imewekwa kwa Kiswahili\n";
                 $response .= "1. Chagua Darasa\n";
                 $response .= "2. Maelezo ya Wanafunzi\n";
@@ -505,9 +505,9 @@
                 $response .= "5. Jisajili ili upate sasisho\n";
                 $response .= "6. Utgång";
             }
-            elseif ($text == "2*3" && $user_count==1) {
+            elseif ($text == "2*3" && $user_count2==1) {
                 $response = "CON Karibu kwenye jaribio \n Jaribu maswali yote \n ".$Q1."";
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 3 && $user_count==1) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 3 && $user_count2==1) {
                 // $response = "CON ".$Q2."";
                 $answer = $userResponse;
                 $a = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
@@ -527,7 +527,7 @@
                     $do = "vibaya";
                 }
                 $response = "CON Swali la 1 ".$do."\n ".$Q2."";
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 4 && $user_count==1) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 4 && $user_count2==1) {
                 $answer = $userResponse;
                 $a = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
                 $a->setFetchMode(PDO:: FETCH_ASSOC);
@@ -550,7 +550,7 @@
                     $do = "vibaya";
                 }
                 $response = "CON Swali la 2 ".$do."\n ".$Q3."";
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 5 && $user_count==1) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 5 && $user_count2==1) {
                 $answer = $userResponse;
                 $a = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
                 $a->setFetchMode(PDO:: FETCH_ASSOC);
@@ -573,7 +573,7 @@
                     $do = "vibaya";
                 }
                 $response = "CON Swali la 3 ".$do."\n ".$Q4."";
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 5 && $user_count==1) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 5 && $user_count2==1) {
                 $answer = $userResponse;
                 $a = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
                 $a->setFetchMode(PDO:: FETCH_ASSOC);
@@ -596,7 +596,7 @@
                     $do = "vibaya";
                 }
                 $response = "CON Swali la 3 ".$do."\n ".$Q4."";
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 6 && $user_count==1) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 6 && $user_count2==1) {
                 $answer = $userResponse;
                 $a = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
                 $a->setFetchMode(PDO:: FETCH_ASSOC);
@@ -619,7 +619,7 @@
                     $do = "vibaya";
                 }
                 $response = "CON Swali la 4 ".$do."\n ".$Q5."";
-            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 7 && $user_count==1) {
+            } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 3 && $level == 7 && $user_count2==1) {
                 $answer = $userResponse;
                 $a = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
                 $a->setFetchMode(PDO:: FETCH_ASSOC);
@@ -648,17 +648,17 @@
                 $score=$sc['stu_score'];
                 $response = "END Swali la 5 ".$do."\n \nAlama yako yote ni ".$score."/5";
             } 
-            elseif ($text == "2*1" && $user_count==1) {
+            elseif ($text == "2*1" && $user_count2==1) {
                 $response = "CON Chagua Somo\n";
                 $response .= "1. Hisabati\n";
                 $response .= "2. Kiswahili\n";
                 $response .= "3. Elimu ya Uraia\n";
                 $response .= "0. nenda kwa uliopita";
             }
-            elseif ($text == "2*1*2" && $user_count==1) {
+            elseif ($text == "2*1*2" && $user_count2==1) {
                 $response = "END Kiswahili kinakuja hivi karibuni!!!\n";
             }
-            elseif ($text == "2*1*3" && $user_count==1) {
+            elseif ($text == "2*1*3" && $user_count2==1) {
                 $response = "END Elimu ya Uraia inakuja hivi karibuni!!!\n";
             }
             // elseif ($text == "1*1" && $user_count==1) {
@@ -668,20 +668,20 @@
             //     $response .= "3. Civic Education\n";
             //     $response .= "0. Back";
             // }
-             elseif ($text == "2*2" && $user_count==1) {
+             elseif ($text == "2*2" && $user_count2==1) {
                 $response = "CON Maelezo ya Wanafunzi\n Jina la kwanza: ".$student_firstname."\n Jina la familia: ".$student_lastname. "\n Jina la familia: ".$student_lga."\n Hali: ".$student_status. "\n";
                 $response .= "0. nenda kwa uliopita";
-            } elseif ($text == "2*6" && $user_count==1) {
+            } elseif ($text == "2*6" && $user_count2==1) {
                 $response = "END Asante kwa kuchagua EduAfrica\n";
-            } elseif ($text == "2*5" && $user_count==1) {
+            } elseif ($text == "2*5" && $user_count2==1) {
                 $user = $con->prepare("UPDATE ken_stu_ussd SET stu_update=? WHERE stu_phone=?");
                 if ($user->execute(["YES",$phone])) {
                     $response = "END Umefanikiwa kujiandikisha kupata sasisho";
                 }
-            } elseif ($text == "2*4" && $user_count==1) {
+            } elseif ($text == "2*4" && $user_count2==1) {
                 $response = "END Mpendwa ".$student_firstname." ".$student_lastname. "\n Usawa wako unaofaa ni ".$student_balance."";
             }
-            elseif ($text == "2*1*1" && $user_count==1) {
+            elseif ($text == "2*1*1" && $user_count2==1) {
                 $response = "CON Kuhusu Hisabati\n";
                 $response .= "1. Kazi\n";
                 $response .= "2. Jaribu\n";
@@ -689,17 +689,17 @@
                 $response .= "4. Uongofu wa Kitengo\n";
                 $response .= "00. Rudi kwenye menyu kuu";
             }
-            elseif ($text == "2*1*1*1" && $user_count==1) {
+            elseif ($text == "2*1*1*1" && $user_count2==1) {
                 $response = "END Kazi ya Hisabati\n Jifunze meza ifuatayo ya kuzidisha\n Jifunze kabla ya Mei 7, 2021";
             }
-            elseif ($text == "2*1*1*2" && $user_count==1) {
+            elseif ($text == "2*1*1*2" && $user_count2==1) {
                 $response = "END Hakuna Mtihani wa Hesabu bado\n";
 
             }
-            elseif ($text == "2*1*1*3" && $user_count==1) {
+            elseif ($text == "2*1*1*3" && $user_count2==1) {
                 $response = "END Alama yako ya Mtihani";
             }
-            elseif ($text == "2*1*1*4" && $user_count==1) {
+            elseif ($text == "2*1*1*4" && $user_count2==1) {
                 $response = "END Kubadilisha vitengo vya urefu wa mita\n 1 km = 1,000 m \n 1 m = 100 cm \n 1 cm = 10 mm \n 1 m = 1,000 mm \n F ° HADI C °\n Kubadilisha joto kwa digrii Fahrenheit kuwa Celsius, toa 32 na kuzidisha kwa .5556 (au 5/9). \n C ° HADI F °\n Kubadilisha joto kwa digrii Celsius kuwa Fahrenheit, kuzidisha kwa 1.8 (au 9/5) na kuongeza 32";
 
             }
