@@ -1,4 +1,5 @@
 <?php
+//
 // Reads the variables sent via POST
     require_once("db.php");
     require_once("config.php");
