@@ -30,10 +30,11 @@ We have learned how to work with APIs, Azure DevOps, and Team collaboration
 ## What's next for EduAfrica
 We would like to continue integrating the USSD service into an e-learning platform
 
-##How to Access this Platform
+## How to Access this Platform
 You can go to https://simulator.africastalking.com:1517/ to test the app
-With the use of The unique code \*384\*33823# to run the app.
+#### With the use of The unique code \*384\*33823# to run the app.
 
 A Demo of this app can be viewed on YouTube link Below 
 https://youtu.be/WXbZWyAZ87s
+Our Website can also be Accessed by https://eduafrica.herokuapp.com/
 
