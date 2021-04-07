@@ -15,7 +15,7 @@
     // Get ussd menu level number from the gateway
     $level = count($ussd_string_exploded);
     $userResponse= $ussd_string_exploded[$level-1];
-    $check_phone=$con->prepare("SELECT * FROM stu_ussd WHERE stu_phone=? AND stu_status=?");
+    $check_phone=$con->prepare("SELECT * FROM stu_ussd WHERE stu_phone=?");
     $check_phone->setFetchMode(PDO:: FETCH_ASSOC);
 
     $quiz_6 = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
@@ -40,7 +40,7 @@
         }
         return $last_index;
     }
-    if($check_phone->execute([$phone,"YES"])){
+    if($check_phone->execute([$phone])){
         $user_count=$check_phone->rowCount(); 
         if($student = $check_phone->fetch()){
             $student_firstname = $student['stu_firstname'];
@@ -153,8 +153,7 @@
             }
              elseif ($text == "1*1" && $user_count==0) {
                 $response = "CON Enter your first name";
-                $user = $con->prepare("INSERT INTO stu_ussd(stu_phone)
-                    VALUES (?)");
+                $user = $con->prepare("INSERT INTO stu_ussd(stu_phone) VALUES (?)");
                 $user->execute([$phone]);
             } elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 3 && $user_count==0) {
                 $response = "CON Enter your last name";
