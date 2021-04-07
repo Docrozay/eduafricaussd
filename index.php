@@ -23,6 +23,15 @@
     $quiz_6->execute();
     $quiz=$quiz_6->fetch();
     $count=$quiz_6->rowCount();
+    if($check_phone->execute([$phone,"YES"])){
+        $user_count=$check_phone->rowCount(); 
+        if($student = $check_phone->fetch()){
+            $student_firstname = $student['stu_firstname'];
+            $student_lastname = $student['stu_lastname'];
+            $student_lga = $student['stu_lga'];
+            $student_status = $student['stu_status'];
+        }   
+    }
     $num = rand(1,$count);
     $Q1 = $quiz['question_1'];
     $Q2 = $quiz['question_2'];
@@ -40,15 +49,7 @@
         }
         return $last_index;
     }
-    if($check_phone->execute([$phone,"YES"])){
-        $user_count=$check_phone->rowCount(); 
-        if($student = $check_phone->fetch()){
-            $student_firstname = $student['stu_firstname'];
-            $student_lastname = $student['stu_lastname'];
-            $student_lga = $student['stu_lga'];
-            $student_status = $student['stu_status'];
-        }   
-    }
+
         $value = contains("1*1*0", $_POST["text"]);
         $value2 = contains("1*2*0", $_POST["text"]);
         $value3 = contains("1*1*1*00", $_POST["text"]);
@@ -132,7 +133,7 @@
             $left = substr($_POST["text"], 0, $value5-3);
             $right = substr($_POST["text"], $value5+1);
             $_POST["text"] = "".$left."".$right."";
-            $value5 = contains("1*1*1*00", $_POST["text"]);
+            $value5 = contains("2*1*1*00", $_POST["text"]);
         }
         
         $text = $_POST["text"];
@@ -424,6 +425,7 @@
 
 
             elseif ($text == "2" && $user_count==0) {
+                        $response = "CON  Language has been set to English\n";
                         $response .= "1. usajili \n";
                         $response .= "2. kuhusu EduAfrica\n";
                         $response .= "3. waundaji\n";
@@ -431,9 +433,14 @@
             }
              elseif ($text == "2*1" && $user_count==0) {
                 $response = "CON Jina lako la kwanza ni nani?";
-                $user = $con->prepare("INSERT INTO stu_ussd(stu_phone)
-                    VALUES (?)");
-                $user->execute([$phone]);
+                $check=$con->prepare("SELECT * FROM stu_ussd WHERE stu_phone=?");
+                $check->setFetchMode(PDO:: FETCH_ASSOC);
+                $check->execute([$phone]);
+                $find=$check->rowCount();
+                if($find==1){}else{
+                    $user = $con->prepare("INSERT INTO stu_ussd(stu_phone) VALUES (?) ");
+                    $user->execute([$phone]);
+                }  
             } elseif ($ussd_string_exploded[0] == 2 && $ussd_string_exploded[1] == 1 && $level == 3 && $user_count==0) {
                 $response = "CON Jina lako la mwisho ni nani?";
                 $firstname = $userResponse;
