@@ -15,7 +15,7 @@
     // Get ussd menu level number from the gateway
     $level = count($ussd_string_exploded);
     $userResponse= $ussd_string_exploded[$level-1];
-    $check_phone=$con->prepare("SELECT * FROM stu_ussd WHERE stu_phone=?");
+    $check_phone=$con->prepare("SELECT * FROM stu_ussd WHERE stu_phone=? AND stu_status=?");
     $check_phone->setFetchMode(PDO:: FETCH_ASSOC);
 
     $quiz_6 = $con->prepare("SELECT * FROM stu_ussd_quiz_6");
@@ -40,7 +40,7 @@
         }
         return $last_index;
     }
-    if($check_phone->execute([$phone])){
+    if($check_phone->execute([$phone,"YES"])){
         $user_count=$check_phone->rowCount(); 
         if($student = $check_phone->fetch()){
             $student_firstname = $student['stu_firstname'];
