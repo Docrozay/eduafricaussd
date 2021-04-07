@@ -135,9 +135,7 @@
             $value5 = contains("1*1*1*00", $_POST["text"]);
         }
         
-        
         $text = $_POST["text"];
-
             if ($text == "") {
                 $response  = "CON Welcome to EduAfrica, Choose Preferred Language\n";
                 $response .= "1. English \n";
@@ -153,8 +151,14 @@
             }
              elseif ($text == "1*1" && $user_count==0) {
                 $response = "CON Enter your first name";
-                $user = $con->prepare("INSERT INTO stu_ussd(stu_phone) VALUES (?)");
-                $user->execute([$phone]);
+                $check=$con->prepare("SELECT * FROM stu_ussd WHERE stu_phone=?");
+                $check->setFetchMode(PDO:: FETCH_ASSOC);
+                $check->execute([$phone]);
+                $find=$check->rowCount();
+                if($find==1){}else{
+                    $user = $con->prepare("INSERT INTO stu_ussd(stu_phone) VALUES (?) ");
+                    $user->execute([$phone]);
+                }     
             } elseif ($ussd_string_exploded[0] == 1 && $ussd_string_exploded[1] == 1 && $level == 3 && $user_count==0) {
                 $response = "CON Enter your last name";
                 $firstname = $userResponse;
